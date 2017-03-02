@@ -1,15 +1,16 @@
 package com.java_stru;
 
 import java.util.*;
+import java.util.regex.Pattern;
 
 public class Main {
 
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
-		SeqList sl=new SeqList(100);
-		for(int i=0;i<100;i++){
-			sl.insert(i, new Integer(i+1));
-		}
+//		SeqList sl=new SeqList(100);
+//		for(int i=0;i<100;i++){
+//			sl.insert(i, new Integer(i+1));
+//		}
 		//测试顺序表
 //		ArrayList<String> ssl=new ArrayList<>();
 //		ssl.add("world");
@@ -67,7 +68,48 @@ public class Main {
 //        else if (i==0&&!(judge.isEmpty())) {
 //			System.out.println("左括号多了");
 //		}
-
+		//核心思想是用栈来保存一个由小到大的优先级
+		String pre="5*(3+4)-6";
+		char[] preArr=pre.toCharArray();
+		Stack<Character> operator=new Stack<Character>();//存放运算符
+		Stack<Character> formula=new Stack<Character>();//存放结果表
+		formula.push('#');//终止符
+		Map map=new HashMap<>();
+		map.put('*', 4);
+		map.put('/', 4);
+		map.put('+', 3);
+		map.put('-', 2);
+		map.put('#', 0);//设置优先级映射
+		
+	    Character former='#';
+		Pattern pattern=Pattern.compile("[0-9]*");
+		for (Character perChar : preArr) {
+//			System.out.println(pattern.matcher(perChar+"").matches());
+			if(pattern.matcher(perChar+"").matches()){
+				formula.push(perChar);
+			}
+			else{
+				Character latter=perChar;
+				int latterInt=Integer.parseInt(map.get(latter).toString());
+				int formerInt=Integer.parseInt(map.get(former).toString());
+				if(latterInt>formerInt){
+					operator.push(perChar);//后面比前面优先级高，push进operator里，改变former
+					former=perChar;
+				}
+				else {
+					formula.push(operator.pop());//后面比前面优先级低，把前面push进formula里，修改perChar为former
+					operator.push(perChar);
+					former=perChar;
+					}
+			}
+		}
+		for (Character character : operator) {//把剩余的运算符压入结果
+			formula.push(operator.pop());
+		}
+		for (Character character : formula) {//看结果
+			System.out.print(character);
+		}
+		
 		
 		
 		
