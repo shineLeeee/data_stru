@@ -18,11 +18,8 @@ public class Main {
 //		matcher2.match("(3+4)*6+3*1+3*4");
 //		Plalindrome pl=new Plalindrome();          //²âÊÔÊÇ·ñÊÇ»ØÎÄ
 //		pl.match("abcdefedcba");
-		String aString=new String();
-		aString="mystring";
-		System.out.println(aString.charAt(3));
-		System.out.println(aString.substring(3,7));
-		System.out.println(aString);
+//		BruteForce bf=new BruteForce();
+//		bf.match("def", "abcdefghifj");             //burteforce×Ö·û´®Æ¥Åä²âÊÔ
 		
 		
 		
