@@ -20,7 +20,10 @@ public class Main {
 //		pl.match("abcdefedcba");
 //		BruteForce bf=new BruteForce();
 //		bf.match("def", "abcdefghifj");             //burteforce×Ö·û´®Æ¥Åä²âÊÔ
-		
+//		Sort hSearch=new Sort();
+//		hSearch.search(new int[]{6,4,8,7,8});       //½»»»ÅÅÐò
+		Hanoi hanoi=new Hanoi();
+		hanoi.move(4, "a", "c", "b");
 		
 		
 		
