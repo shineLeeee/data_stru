@@ -23,8 +23,19 @@ public class Main {
 //		Sort hSearch=new Sort();
 //		hSearch.search(new int[]{6,4,8,7,8});       //½»»»ÅÅÐò
 //		Hanoi hanoi=new Hanoi();
-//		hanoi.move(4, "a", "c", "b");
-		
+//		hanoi.move(4, "a", "c", "b");				//ººÅµËþ
+		int i=1;
+		int b=1;
+		while(i<=1500){
+			if (b%2==0||b%5==0||b%3==0) {
+				i++;
+				b++;
+			}
+			else {
+				b++;
+			}
+		}
+		System.out.println(b);
 		
 		
 		
