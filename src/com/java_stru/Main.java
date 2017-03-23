@@ -1,7 +1,6 @@
 package com.java_stru;
 
-import java.nio.charset.Charset;
-import java.util.Arrays;
+import java.util.Scanner;
 
 public class Main {
 
@@ -31,7 +30,53 @@ public class Main {
 //			j=0;
 //			System.out.println();
 //		}
+//		archive ar=new archive(8);	
+//		Scanner scanner=new Scanner(System.in);
+//		String input=scanner.nextLine();
+//		String[] inputStrings=input.split(",");
+//		for(String per:inputStrings){
+//			System.out.println(per);
+//		}
+//		quadrangle q=new quadrangle();
+//		parallelogram p=new parallelogram();
+//		square s=new square();
+//		if (s instanceof parallelogram) {
+//			System.out.println("正方形是平行四边形类的对象");
+//		}
+//		else {
+//			System.out.println("正方形的对象不是平行四边形的对象");
+//		}//子类对象都是父类对象的实例
+//		if (q instanceof parallelogram) {
+//			System.out.println("实现了接口");
+//		}else {
+//			System.out.println("没有实现接口");
+//		}
 		
 	}
 
+
 }
+//**********测试instanceof*******/
+class quadrangle{
+	
+}
+class parallelogram extends quadrangle{
+	
+}
+class square extends parallelogram{
+	
+}
+
+//class archive{
+//	archive(int a){
+//		System.out.println("with variable constructor "+a);
+//	}
+//	archive() {
+//		System.out.println("without variable constructor");
+//		// TODO Auto-generated constructor stub
+//	}
+////	protected void finalize(){
+////		this.finalize();
+////	}
+//	
+//}
